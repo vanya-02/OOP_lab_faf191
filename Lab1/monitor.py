@@ -7,12 +7,13 @@ class Monitor:
 
     def info(self):
         print(f"color: {self.color}\ndimensions: {self.dim}inch\nresolution: {self.x}x{self.y}\n")
+    def compare(self, monitor2):
+        self.info()
+        monitor2.info()
 
-
-Panasonic = Monitor()
-Panasonic.info()
 
 Samsung = Monitor("Pink", 70, 3840)
 Samsung.y = 2160
-Samsung.info()
 
+Panasonic = Monitor()
+Panasonic.compare(Samsung)
