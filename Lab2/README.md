@@ -6,6 +6,7 @@
 2
 3
 4
+Queue is Empty
 5
 Queue is Full
 ```

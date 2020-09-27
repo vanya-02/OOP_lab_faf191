@@ -57,12 +57,13 @@ public class Queue {
             if (0 == last_i) {
                 System.out.println("Queue is Empty");
             }
+        }
         else {
             if (last_i == 0) {
                 System.out.println("Queue is Empty");
             }
             }
-        }
+
     }
 
     public void full() {
