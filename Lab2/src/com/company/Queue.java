@@ -16,7 +16,7 @@ public class Queue {
     }
 
     public void push(int i) {
-        if (lst_fixed != null) {
+        if (lst_fixed != null && lst_fixed.length > last_i) {
             if (lst_fixed.length > last_i) {
                 lst_fixed[last_i] = i;
                 last_i += 1;
@@ -38,14 +38,14 @@ public class Queue {
         if (lst_fixed != null && last_i != 0) {
             temp = lst_fixed[0];
             last_i -= 1;
-            for (int i = 0; i < lst_fixed.length-1; i++) {
+            for (int i = 0; i < lst_fixed.length - 1; i++) {
                 lst_fixed[i] = lst_fixed[i + 1];
             }
         }
         if (lst != null && last_i != 0) {
             temp = lst.get(0);
             last_i -= 1;
-            for (int i = 0; i < lst.size()-1; i++) {
+            for (int i = 0; i < lst.size() - 1; i++) {
                 lst.set(i, lst.get(i + 1));
             }
         }
@@ -53,24 +53,16 @@ public class Queue {
     }
 
     public void empty() {
-        if (lst_fixed != null) {
-            if (0 == last_i) {
-                System.out.println("Queue is Empty");
-            }
+        if (lst_fixed != null && 0 == last_i) {
+            System.out.println("Queue is Empty");
+        } else if (last_i == 0) {
+            System.out.println("Queue is Empty");
         }
-        else {
-            if (last_i == 0) {
-                System.out.println("Queue is Empty");
-            }
-            }
-
     }
 
     public void full() {
-        if (lst_fixed != null) {
-            if (lst_fixed.length == last_i) {
-                System.out.println("Queue is Full");
-            }
+        if (lst_fixed != null && lst_fixed.length == last_i) {
+            System.out.println("Queue is Full");
         }
     }
 
